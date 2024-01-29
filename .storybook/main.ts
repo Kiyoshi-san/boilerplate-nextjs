@@ -13,8 +13,12 @@ const config: StorybookConfig = {
     "@storybook/addon-interactions",
   ],
   framework: {
-    name: "@storybook/nextjs",
-    options: {},
+    name: '@storybook/nextjs',
+    options: {
+      builder: {
+        useSWC: true, // Set useSWC to true if you want to try out the experimental SWC compiler in Next.js >= 14.0.0
+      },
+    },
   },
   docs: {
     autodocs: "tag",
