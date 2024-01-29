@@ -1,10 +1,10 @@
 import Button from ".";
 
-import type { Story, Meta } from "@storybook/react";
+import type { StoryFn, Meta } from "@storybook/react";
 
 export default {
   title: "Button",
   component: Button,
 } as Meta;
 
-export const Basic: Story = () => <Button />;
+export const Basic: StoryFn = () => <Button />;
