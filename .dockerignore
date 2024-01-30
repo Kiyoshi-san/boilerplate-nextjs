@@ -1,2 +1,7 @@
 node_modules
 .next
+
+# production
+/build
+/public/sw.js
+/public/workbox*.js
