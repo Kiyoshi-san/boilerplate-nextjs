@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { useServerInsertedHTML } from "next/navigation";
 import { ServerStyleSheet, StyleSheetManager } from "styled-components";
+import { Html, Head } from "next/document";
 
 export default function StyledComponentsRegistry({
   children,
@@ -22,8 +23,18 @@ export default function StyledComponentsRegistry({
   if (typeof window !== "undefined") return <>{children}</>;
 
   return (
-    <StyleSheetManager sheet={styledComponentsStyleSheet.instance}>
-      {children}
-    </StyleSheetManager>
+    <Html lang="pt-br">
+      <Head>
+        <link
+          rel="preload"
+          href="/fonts/poppins-v9-latin-regular.woff2"
+          as="font"
+          crossOrigin=""
+        />
+      </Head>
+      <StyleSheetManager sheet={styledComponentsStyleSheet.instance}>
+        {children}
+      </StyleSheetManager>
+    </Html>
   );
 }
